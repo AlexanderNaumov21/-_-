@@ -1,0 +1,162 @@
+Sub zadacha()
+
+    Dim unique0L As New Collection
+    Dim unique0M As New Collection
+    Dim allData0L As Range
+    Dim allData0M As Range
+    Dim allMvz0L As Range
+    Dim allMvz0M As Range
+    
+
+    'ïîñëåäíÿÿ ÿ÷åéêà ðåãèñòðà 0L'
+    Dim Row10L As Long
+    Dim Row20L As Long
+    
+    Row10L = Ëèñò1.Rows.Count
+    Row20L = Ëèñò1.Range("B" & Row10L).End(xlUp).row
+    
+    'âñå ñ÷åòà ãëàâíîé êíèãè ðåãèñòðà 0L'
+    Set allData0L = Ëèñò1.Range("B2:B" & Row20L)
+    
+    'âñå çàí÷åíèÿ ÌÂÇ ðåãèñòðà 0L'
+    Set allMvz0L = Ëèñò1.Range("M2:M" & Row20L)
+    
+
+    
+    'ïîñëåäíÿÿ ÿ÷åéêà ðåãèñòðà 0M'
+    Dim Row10M As Long
+    Dim Row20M As Long
+    
+    Row10M = Ëèñò2.Rows.Count
+    Row20M = Ëèñò2.Range("B" & Row10M).End(xlUp).row
+    
+    'âñå ñ÷åòà ãëàâíîé êíèãè ðåãèñòðà 0M'
+    Set allData0M = Ëèñò2.Range("B2:B" & Row20M)
+    
+    'âñå çàí÷åíèÿ ÌÂÇ ðåãèñòðà 0M'
+    Set allMvz0M = Ëèñò2.Range("L2:L" & Row20M)
+    
+
+    
+    Dim unit As Range
+    
+    'óíèêàëüíûå çíà÷åíèÿ ñ÷åòîâ ãëàâíîé êíèãè ðåãèñòðà 0L'
+    On Error Resume Next
+    For Each unit In allData0L
+        unique0L.Add unit.Value, CStr(unit.Value)
+    Next unit
+    On Error GoTo 0
+    
+
+    
+    'óíèêàëüíûå çíà÷åíèÿ ñ÷åòîâ ãëàâíîé êíèãè ðåãèñòðà 0M'
+    On Error Resume Next
+    For Each unit In allData0M
+        unique0M.Add unit.Value, CStr(unit.Value)
+    Next unit
+    On Error GoTo 0
+    
+
+    
+    Dim unique0L1 As New Collection
+    Dim unique0M1 As New Collection
+    
+    Dim uniqueMvz0L As New Collection
+    Dim uniqueMvz0M As New Collection
+    
+   
+    
+    Dim zn As Variant
+    Dim arrZn As Variant
+    Dim cou As Long
+    Dim len1 As Long
+    Dim arrZnS() As Variant
+    
+    'çíà÷åíèÿ ÌÂÇ äëÿ óíèêàëüíûõ çíà÷åíèé ñ÷åòîâ ãëàâíîé êíèãè ðåãèñòðà 0L'
+    On Error Resume Next
+    For Each zn In unique0L
+    
+        len1 = 0
+        For cou = 1 To allData0L.Count
+            If zn = allData0L(cou) Then
+                len1 = len1 + 1
+                ReDim Preserve arrZnS(len1)
+                arrZnS(len1 - 1) = allMvz0L(cou)
+            End If
+        Next
+        
+        For Each arrZn In arrZnS
+            uniqueMvz0L.Add arrZn, CStr(arrZn)
+        Next arrZn
+        
+        unique0L1.Add uniqueMvz0L, CStr(zn)
+        Erase arrZnS
+        Set uniqueMvz0L = New Collection
+        
+    Next zn
+    On Error GoTo 0
+    
+ 
+    'çíà÷åíèÿ ÌÂÇ äëÿ óíèêàëüíûõ çíà÷åíèé ñ÷åòîâ ãëàâíîé êíèãè ðåãèñòðà 0M'
+    On Error Resume Next
+    For Each zn In unique0M
+    
+        len1 = 0
+        For cou = 1 To allData0M.Count
+            If zn = allData0M(cou) Then
+                len1 = len1 + 1
+                ReDim Preserve arrZnS(len1)
+                arrZnS(len1 - 1) = allMvz0M(cou)
+            End If
+        Next
+        
+        For Each arrZn In arrZnS
+            uniqueMvz0M.Add arrZn, CStr(arrZn)
+        Next arrZn
+        
+        unique0M1.Add uniqueMvz0M, CStr(zn)
+        Erase arrZnS
+        Set uniqueMvz0M = New Collection
+        
+    Next zn
+    On Error GoTo 0
+    
+    'For Each zn In unique0M1
+    '    Debug.Print "[", Join(zn, ", "), "]"
+    'Next zn
+    
+    
+    
+    
+    MsgBox "Óíèêàëüíûå çíà÷åíèÿ áûëè óñïåøíî îòîáðàíû!", vbInformation
+    'Application.SendKeys "^g ^a {DEL}"
+    
+    
+    
+
+    Dim row As Long
+    
+    'âûâîä ïîëó÷åííûõ çíà÷åíèé'
+    row = 14
+    For cou = 1 To unique0L.Count
+        'Debug.Print unique0L(cou)
+        Ëèñò3.Cells(row, 1) = unique0L(cou)
+        For Each zn In unique0L1.Item(cou)
+            'Debug.Print zn
+            Ëèñò3.Cells(row, 2) = zn
+            row = row + 1
+        Next zn
+    Next
+    'Debug.Print "///"
+    row = 14
+    For cou = 1 To unique0M.Count
+        Ëèñò3.Cells(row, 4) = unique0M(cou)
+        For Each zn In unique0M1.Item(cou)
+            Ëèñò3.Cells(row, 5) = zn
+            row = row + 1
+        Next zn
+    Next
+    
+    
+    
+End Sub
