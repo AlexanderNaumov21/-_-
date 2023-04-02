@@ -1,0 +1,78 @@
+{
+  "Organizations": [
+    {
+      "OrgIdGuid": "4919319c-9953-495d-a5dd-3aae7ceae157",
+      "OrgId": "4919319c-9953-495d-a5dd-3aae7ceae157",
+      "Inn": "9651402404",
+      "Kpp": "965101000",
+      "FullName": "Тестовая организация №5140240",
+      "ShortName": "Тестовая организация №5140240",
+      "JoinedDiadocTreaty": false,
+      "Boxes": [
+        {
+          "BoxId": "440defa2a218428caff6fa546fd5dd1c@diadoc.ru",
+          "BoxIdGuid": "440defa2-a218-428c-aff6-fa546fd5dd1c",
+          "Title": "Тестовая организация №5140240",
+          "InvoiceFormatVersion": "v5_02",
+          "EncryptedDocumentsAllowed": false
+        }
+      ],
+      "FnsParticipantId": "2BM-9651402404-965101000-202302261016340312364",
+      "Address": {
+        "RussianAddress": {
+          "Region": ""
+        },
+        "AddressCode": ""
+      },
+      "Departments": [],
+      "IsPilot": false,
+      "IsActive": true,
+      "IsTest": true,
+      "IsBranch": false,
+      "IsRoaming": false,
+      "IsEmployee": true,
+      "InvitationCount": 0,
+      "SearchCount": 0,
+      "Sociability": "AllOrganizations",
+      "IsForeign": false,
+      "HasCertificateToSign": true
+    },
+    {
+      "OrgIdGuid": "7db5091a-0ec6-44e0-b6df-c7bec523e16a",
+      "OrgId": "7db5091a-0ec6-44e0-b6df-c7bec523e16a",
+      "Inn": "9669157591",
+      "Kpp": "966901000",
+      "FullName": "Тестовая организация №6915759",
+      "ShortName": "Тестовая организация №6915759",
+      "JoinedDiadocTreaty": false,
+      "Boxes": [
+        {
+          "BoxId": "ec7c6a2d07544823a7a2486e71377a84@diadoc.ru",
+          "BoxIdGuid": "ec7c6a2d-0754-4823-a7a2-486e71377a84",
+          "Title": "Тестовая организация №6915759",
+          "InvoiceFormatVersion": "v5_02",
+          "EncryptedDocumentsAllowed": false
+        }
+      ],
+      "FnsParticipantId": "2BM-9669157591-966901000-202302261017005445037",
+      "Address": {
+        "RussianAddress": {
+          "Region": ""
+        },
+        "AddressCode": ""
+      },
+      "Departments": [],
+      "IsPilot": false,
+      "IsActive": true,
+      "IsTest": true,
+      "IsBranch": false,
+      "IsRoaming": false,
+      "IsEmployee": true,
+      "InvitationCount": 0,
+      "SearchCount": 0,
+      "Sociability": "AllOrganizations",
+      "IsForeign": false,
+      "HasCertificateToSign": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "Users": [
+    {
+      "Id": "79a39217-85a5-46c7-9b96-cd3cd002a001",
+      "Name": "Петров Петр Петрович1",
+      "Permissions": {
+        "UserDepartmentId": "00000000-0000-0000-0000-000000000000",
+        "IsAdministrator": false,
+        "DocumentAccessLevel": "AllDocuments",
+        "CanSignDocuments": true,
+        "CanSendDocuments": false,
+        "CanManageCounteragents": true,
+        "CanAddResolutions": true,
+        "CanRequestResolutions": true,
+        "SelectedDepartmentIds": [],
+        "JobTitle": "Сотрудник",
+        "CanCreateDocuments": true,
+        "AuthorizationPermission": {
+          "IsBlocked": false
+        },
+        "CanDeleteRestoreDocuments": true
+      },
+      "Position": "Сотрудник"
+    },
+    {
+      "Id": "cd06f33d-d58b-409f-abe0-ec58aec7bd38",
+      "Name": "Пикалов Виталий Владимирович1",
+      "Permissions": {
+        "UserDepartmentId": "00000000-0000-0000-0000-000000000000",
+        "IsAdministrator": true,
+        "DocumentAccessLevel": "DepartmentAndSubdepartments",
+        "CanSignDocuments": false,
+        "CanSendDocuments": false,
+        "CanManageCounteragents": true,
+        "CanAddResolutions": false,
+        "CanRequestResolutions": false,
+        "SelectedDepartmentIds": [],
+        "JobTitle": "Сотрудник",
+        "CanCreateDocuments": false,
+        "AuthorizationPermission": {
+          "IsBlocked": false
+        },
+        "CanDeleteRestoreDocuments": false
+      },
+      "Position": "Сотрудник"
+    }
+  ],
+  "CurrentUserId": "79a39217-85a5-46c7-9b96-cd3cd002a001"
+}
